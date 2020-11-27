@@ -1,9 +1,11 @@
 import React from "react";
 import "./index.css";
+import { useHistory } from "react-router-dom";
 import anthonyDrawn from "../../pictures/anthonyDrawn.png";
 import fitnessPreview from "../../pictures/fitnessPreview.png";
 
 export const Portfolio = () => {
+  const history = useHistory();
   return (
     <div className="portfolio-container">
       <div>
@@ -31,7 +33,12 @@ export const Portfolio = () => {
                   An app that connects users to fitness classes hosted by local
                   instructors.
                 </p>
-                <button className="view-study">View Case Studies</button>
+                <button
+                  className="view-study"
+                  onClick={() => history.push("/case-studies/fittracker")}
+                >
+                  View Case Studies
+                </button>
               </div>
             </div>
           </div>
