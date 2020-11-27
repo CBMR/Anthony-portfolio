@@ -1,25 +1,23 @@
-import React from 'react';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
 
-import Nav from './body/Nav';
-import Footer from './body/Footer';
-import Body from './body/Body';
-import about from './body/aboutme'
-import Third from './body/Third'
-import {Switch,Route} from 'react-router-dom'
+import { Nav, Footer } from "./body/layout";
+import Portfolio from "./body/portfolio";
+import About from "./body/about";
 
-import './App.css';
-
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-        <Nav/>
-      <Switch>
-        <Route exact path='/' component={Body} />
-        <Route path='/about' component={about}/>
-        <Route path='/case1' component={Third} />
-      </Switch>
-      <Footer/>
+    <div className="app-container">
+      <Nav />
+      <div className="content">
+        <Switch>
+          <Route exact path="/" component={Portfolio} />
+          <Route path="/about" component={About} />
+        </Switch>
+      </div>
+      <Footer />
     </div>
   );
 }

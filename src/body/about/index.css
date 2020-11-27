@@ -1,0 +1,10 @@
+.about-container {
+  display: flex;
+  padding: 40px;
+  justify-content: center;
+}
+
+.about-details-container {
+  width: 420px;
+  margin-left: 60px;
+}

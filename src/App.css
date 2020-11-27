@@ -1,340 +1,140 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0-modified | 20110126
-   License: none (public domain)
-*/
-/* --------------------------------- reset --------------------------------- */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
   margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
 }
 
-
-:focus {
-    outline: 0;
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* --------------------------------- reset --------------------------------- */
+a {
+  text-decoration: none;
+  outline: 0;
+}
+a:active {
+  outline: 0;
+}
+a:focus {
+  outline: 0;
+}
+a:visited {
+  color: black;
+}
+p {
+  font-size: 18px;
+}
+h1 {
+  font: bold;
+  font-size: 54px;
+}
+h2 {
+  font-weight: bold;
+  font-size: 46px;
+}
+h3 {
+  font-weight: bold;
+  font-size: 28px;
+}
+h4 {
+  font-weight: bold;
+  font-size: 16px;
+}
+button {
+  border: none;
+  background-color: transparent;
+}
+html {
+  font-size: 18px;
+
+  @media screen and (min-width: 900px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+  }
 }
 
 body {
-	line-height: 1;
+  width: 100%;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
-ol, ul {
-	list-style: none;
+.app-container {
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
-blockquote, q {
-	quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-input[type=search]::-webkit-search-cancel-button,
-input[type=search]::-webkit-search-decoration,
-input[type=search]::-webkit-search-results-button,
-input[type=search]::-webkit-search-results-decoration {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-input[type=search] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-}
-
-textarea {
-    overflow: auto;
-    vertical-align: top;
-    resize: vertical;
-}
-
-
-audio,
-canvas,
-video {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    max-width: 100%;
-}
-
-
-audio:not([controls]) {
-    display: none;
-    height: 0;
-}
-
-
-[hidden] {
-    display: none;
-}
-
-
-html {
-    font-size: 100%; 
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%; 
-}
-
-
-a:focus {
-    outline: thin dotted;
-}
-
-a:active,
-a:hover {
-    outline: 0;
-}
-
-
-
-img {
-    border: 0; 
-    -ms-interpolation-mode: bicubic; 
-}
-
-
-figure {
-    margin: 0;
-}
-
-
-form {
-    margin: 0;
-}
-
-
-fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
-}
-
-
-legend {
-    border: 0; 
-    padding: 0;
-    white-space: normal; 
-    *margin-left: -7px; 
-}
-
-
-button,
-input,
-select,
-textarea {
-    font-size: 100%; 
-    margin: 0; 
-    vertical-align: baseline; 
-    *vertical-align: middle;
-}
-
-button,
-input {
-    line-height: normal;
-}
-
-
-button,
-select {
-    text-transform: none;
-}
-
-button,
-html input[type="button"], 
-input[type="reset"],
-input[type="submit"] {
-    -webkit-appearance: button; 
-    cursor: pointer; 
-    *overflow: visible;  
-}
-
-
-button[disabled],
-html input[disabled] {
-    cursor: default;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-    box-sizing: border-box; 
-    padding: 0; 
-    *height: 13px; 
-    *width: 13px; 
-}
-
-input[type="search"] {
-    -webkit-appearance: textfield; 
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box; 
-    box-sizing: content-box;
-}
-
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
-}
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-}
-textarea {
-    overflow: auto; 
-    vertical-align: top; 
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-html,
-button,
-input,
-select,
-textarea {
-    color: #222;
-}
-
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-
-img {
-    vertical-align: middle;
-}
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-textarea {
-    resize: vertical;
-}
-
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-} 
-/* --------------------------------- reset --------------------------------- */
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-a { text-decoration: none;}
-a:visited { color: black;}
-p{
-  font-family: 'Roboto', sans-serif;
-  font-size: 30px;
-  text-align: left;
-}
-h1{
-  margin: auto auto auto 0px;
-  font: bold;
-  /* text-align: left; */
-  font-size: 54px;
-  /* border-bottom: 4px solid red; */
-}
-h2{
-  margin: auto auto auto 0px;
-  font-size: 46px;
-  text-align: left;
-  padding-bottom: 10px;
-  border-bottom: 2px solid red;
-}
-h3{
-  margin: auto auto auto 0px;
-  margin-bottom: 40px;
-  font-weight: bold;
-  font-size: 34px;
-  border-bottom: 2px solid red;
-}
-
-button{
-  border: none;
-}
-h4{
-  font-size: 16px;
-  /* margin: 0px; */
-}
-img{
-  margin-block-start: 1em;
+.content {
+  margin-top: 143px;
 }
